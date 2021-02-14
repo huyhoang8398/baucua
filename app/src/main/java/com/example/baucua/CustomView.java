@@ -72,7 +72,11 @@ public class CustomView extends View {
         ShakeDetector.create(context, new ShakeDetector.OnShakeListener() {
             @Override
             public void OnShake() {
-                hideTopCircle();
+                Handler y = new Handler();
+                y.postDelayed(() -> {
+                    hideTopCircle();
+                }, 2000);
+
                 Handler h = new Handler();
                 h.postDelayed(() -> {
                     newGame();
